@@ -26,8 +26,6 @@ class SAPlayerViewController: UIViewController {
         self.closeButton.layer.borderColor = UIColor.white.cgColor
         self.closeButton.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         
-        view.addSubview(closeButton)
-        
     }
 
     override func viewDidLoad() {
@@ -48,6 +46,8 @@ class SAPlayerViewController: UIViewController {
         playerController.view.frame = self.view.frame
         
         player.play()
+        
+        view.addSubview(closeButton)
         
     }
 

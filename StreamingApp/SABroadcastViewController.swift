@@ -182,8 +182,8 @@ class SABroadcastViewController: UIViewController {
     
     func rotateCamera() {
         
-        let position:AVCaptureDevicePosition = currentPosition == .back ? .front : .back
-        rtmpStream.attachCamera(DeviceUtil.device(withPosition: position))
+        self.currentPosition = currentPosition == .back ? .front : .back
+        rtmpStream.attachCamera(DeviceUtil.device(withPosition: self.currentPosition))
         
     }
     
