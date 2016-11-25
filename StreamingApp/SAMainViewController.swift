@@ -23,8 +23,6 @@ class SAMainViewController: UIViewController {
         self.startStreamButton.layer.cornerRadius = 5
         self.startStreamButton.layer.borderColor = UIColor.red.cgColor
         
-        //self.startStreamButton
-        
         self.watchStreamButton = UIButton(type: .system)
         self.watchStreamButton.setTitle("Watch stream", for: .normal)
         self.watchStreamButton.addTarget(self, action: #selector(self.watchStreamAction), for: .touchUpInside)
@@ -50,7 +48,6 @@ class SAMainViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "StreamingApp"
-        
         
     }
     
@@ -82,6 +79,8 @@ class SAMainViewController: UIViewController {
     
     func watchStreamAction() {
         
+        let playerVC = SAPlayerViewController()
+        self.present(playerVC, animated: true, completion: nil)
         
     }
     

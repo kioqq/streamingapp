@@ -7,14 +7,47 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class SAPlayerViewController: UIViewController {
     
+    var closeButton:UIButton!
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.closeButton = UIButton(type: .system)
+        self.closeButton.setTitle("Close", for: .normal)
+        self.closeButton.tintColor = UIColor.white
+        self.closeButton.addTarget(self, action: #selector(SAPlayerViewController.stopAndCloseAction), for: .touchUpInside)
+        self.closeButton.layer.borderWidth = 1
+        self.closeButton.layer.cornerRadius = 5
+        self.closeButton.layer.borderColor = UIColor.white.cgColor
+        
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let urlString = "\(SAConfig.hlsServerPlayURL)/testo/playlist.m3u8"
+        
+        let url = URL(string:urlString)
+        let player = AVPlayer(url: url!)
+        let playerController = AVPlayerViewController()
+        playerController.showsPlaybackControls = false
+        
+        playerController.player = player
+        self.addChildViewController(playerController)
+        self.view.addSubview(playerController.view)
+        playerController.view.frame = self.view.frame
+        
+        player.play()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +55,10 @@ class SAPlayerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    ///
+    
+    func stopAndCloseAction() {
+        
     }
-    */
 
 }
