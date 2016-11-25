@@ -134,11 +134,14 @@ class SABroadcastViewController: UIViewController {
         let sampleRate:Double = 44_100
         
         do {
+            
             try AVAudioSession.sharedInstance().setPreferredSampleRate(sampleRate)
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
             try AVAudioSession.sharedInstance().setMode(AVAudioSessionModeVideoChat)
             try AVAudioSession.sharedInstance().setActive(true)
+            
         } catch {
+            
         }
         
         //===============================
@@ -162,14 +165,8 @@ class SABroadcastViewController: UIViewController {
             "bitrate": 32 * 1024,
             "sampleRate": sampleRate,
         ]
-        //854x480
-        rtmpStream.videoSettings = [
-            "width": 480, // video output width
-            "height": 854, // video output height
-            "bitrate": 480 * 1024, // video output bitrate
-            "profileLevel": kVTProfileLevel_H264_Baseline_3_1, // H264 Profile require "import VideoToolbox"
-            "maxKeyFrameIntervalDuration": 1, // key frame / sec
-        ]
+        
+        self.rotated()
         
         lfView.attachStream(rtmpStream)
         
@@ -221,7 +218,7 @@ class SABroadcastViewController: UIViewController {
                 "height": 480, // video output height
                 "bitrate": 480 * 1024, // video output bitrate
                 "profileLevel": kVTProfileLevel_H264_Baseline_3_1, // H264 Profile require "import VideoToolbox"
-                "maxKeyFrameIntervalDuration": 1, // key frame / sec
+                "maxKeyFrameIntervalDuration": 2, // key frame / sec
             ]
             
         }
@@ -234,7 +231,7 @@ class SABroadcastViewController: UIViewController {
                 "height": 854, // video output height
                 "bitrate": 480 * 1024, // video output bitrate
                 "profileLevel": kVTProfileLevel_H264_Baseline_3_1, // H264 Profile require "import VideoToolbox"
-                "maxKeyFrameIntervalDuration": 1, // key frame / sec
+                "maxKeyFrameIntervalDuration": 2, // key frame / sec
             ]
         }
         
