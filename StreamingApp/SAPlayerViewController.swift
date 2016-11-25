@@ -25,6 +25,7 @@ class SAPlayerViewController: UIViewController {
         self.closeButton.layer.cornerRadius = 5
         self.closeButton.layer.borderColor = UIColor.white.cgColor
         self.closeButton.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        self.closeButton.titleLabel?.font = UIFont(name: "OpenSans-CondensedLight", size: 17)!
         
     }
 
@@ -49,6 +50,10 @@ class SAPlayerViewController: UIViewController {
         
         view.addSubview(closeButton)
         
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     override func viewWillLayoutSubviews() {

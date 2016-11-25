@@ -7,5 +7,6 @@ target 'StreamingApp' do
 
   # Pods for StreamingApp
   pod 'lf'
+  pod 'pop'
 
 end

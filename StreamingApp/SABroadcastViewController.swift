@@ -34,6 +34,7 @@ class SABroadcastViewController: UIViewController {
         self.closeButton.layer.cornerRadius = 5
         self.closeButton.layer.borderColor = UIColor.white.cgColor
         self.closeButton.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        self.closeButton.titleLabel?.font = UIFont(name: "OpenSans-CondensedLight", size: 17)!
         
         self.changeCamera = UIButton(type: .system)
         self.changeCamera.setTitle("Camera", for: .normal)
@@ -43,6 +44,7 @@ class SABroadcastViewController: UIViewController {
         self.changeCamera.layer.cornerRadius = 5
         self.changeCamera.layer.borderColor = UIColor.white.cgColor
         self.changeCamera.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        self.changeCamera.titleLabel?.font = UIFont(name: "OpenSans-CondensedLight", size: 17)!
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SABroadcastViewController.tapScreen(_:)))
         self.touchView.addGestureRecognizer(tapGesture)

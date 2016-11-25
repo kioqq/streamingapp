@@ -10,25 +10,35 @@ import UIKit
 
 class SAMainViewController: UIViewController {
     
-    var startStreamButton:UIButton!
-    var watchStreamButton:UIButton!
+    var startStreamButton:SAStartButton!
+    var watchStreamButton:SAStartButton!
     
     func initVars() {
         
-        self.startStreamButton = UIButton(type: .system)
+        self.startStreamButton = SAStartButton()
         self.startStreamButton.setTitle("Start stream", for: .normal)
         self.startStreamButton.addTarget(self, action: #selector(self.startStreamAction), for: .touchUpInside)
+        self.startStreamButton.addTarget(self.startStreamButton, action: #selector(self.startStreamButton.touchDown), for: UIControlEvents.touchDown)
+        self.startStreamButton.addTarget(self.startStreamButton, action: #selector(self.startStreamButton.touchUpInside), for: UIControlEvents.touchUpInside)
         self.startStreamButton.tintColor = UIColor.red
         self.startStreamButton.layer.borderWidth = 1
         self.startStreamButton.layer.cornerRadius = 5
-        self.startStreamButton.layer.borderColor = UIColor.red.cgColor
+        self.startStreamButton.backgroundColor = UIColor.red
+        self.startStreamButton.titleLabel?.textColor = UIColor.white
+        self.startStreamButton.titleLabel?.font = UIFont(name: "OpenSans-CondensedLight", size: 17)!
         
-        self.watchStreamButton = UIButton(type: .system)
+        ///
+        
+        self.watchStreamButton = SAStartButton()
         self.watchStreamButton.setTitle("Watch stream", for: .normal)
         self.watchStreamButton.addTarget(self, action: #selector(self.watchStreamAction), for: .touchUpInside)
+        self.watchStreamButton.addTarget(self.watchStreamButton, action: #selector(self.watchStreamButton.touchDown), for: UIControlEvents.touchDown)
+        self.watchStreamButton.addTarget(self.watchStreamButton, action: #selector(self.watchStreamButton.touchUpInside), for: UIControlEvents.touchUpInside)
         self.watchStreamButton.layer.borderWidth = 1
         self.watchStreamButton.layer.cornerRadius = 5
-        self.watchStreamButton.layer.borderColor = self.watchStreamButton.tintColor.cgColor
+        self.watchStreamButton.backgroundColor = self.watchStreamButton.tintColor
+        self.watchStreamButton.titleLabel?.textColor = UIColor.white
+        self.watchStreamButton.titleLabel?.font = UIFont(name: "OpenSans-CondensedLight", size: 17)!
         
     }
     

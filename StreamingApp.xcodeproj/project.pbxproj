@@ -21,6 +21,7 @@
 		BEBA878E1DE8B30D002AF35C /* OpenSans-CondBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEBA878A1DE8B2F5002AF35C /* OpenSans-CondBold.ttf */; };
 		BEBA878F1DE8B30D002AF35C /* OpenSans-CondLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEBA878B1DE8B2F5002AF35C /* OpenSans-CondLight.ttf */; };
 		BEBA87901DE8B30D002AF35C /* OpenSans-CondLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEBA878C1DE8B2F5002AF35C /* OpenSans-CondLightItalic.ttf */; };
+		BEBA87921DE8D680002AF35C /* SAStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBA87911DE8D67F002AF35C /* SAStartButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BEBA878A1DE8B2F5002AF35C /* OpenSans-CondBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondBold.ttf"; sourceTree = "<group>"; };
 		BEBA878B1DE8B2F5002AF35C /* OpenSans-CondLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondLight.ttf"; sourceTree = "<group>"; };
 		BEBA878C1DE8B2F5002AF35C /* OpenSans-CondLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondLightItalic.ttf"; sourceTree = "<group>"; };
+		BEBA87911DE8D67F002AF35C /* SAStartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAStartButton.swift; sourceTree = "<group>"; };
 		E4DF1E6670D39CA30CACC7D6 /* Pods_StreamingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9488BBAEC114286EE103B0 /* Pods-StreamingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreamingApp/Pods-StreamingApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,7 +98,7 @@
 			children = (
 				BE513B2E1DE8A0DE009BC606 /* Root */,
 				BE513B2F1DE8A1EB009BC606 /* Controllers */,
-				BE513B391DE8A4E0009BC606 /* Extentions */,
+				BE513B391DE8A4E0009BC606 /* CustomUI */,
 				BE163C9D1DE76512009034F3 /* Core */,
 			);
 			path = StreamingApp;
@@ -158,12 +160,13 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
-		BE513B391DE8A4E0009BC606 /* Extentions */ = {
+		BE513B391DE8A4E0009BC606 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
 				BEBA87881DE8B2D0002AF35C /* SANavigationControler.swift */,
+				BEBA87911DE8D67F002AF35C /* SAStartButton.swift */,
 			);
-			name = Extentions;
+			name = CustomUI;
 			sourceTree = "<group>";
 		};
 		BEBA878D1DE8B2F8002AF35C /* Fonts */ = {
@@ -305,6 +308,7 @@
 			files = (
 				BE513B351DE8A4BE009BC606 /* SABroadcastViewController.swift in Sources */,
 				BE163C8E1DE7647C009034F3 /* SAMainViewController.swift in Sources */,
+				BEBA87921DE8D680002AF35C /* SAStartButton.swift in Sources */,
 				BE513B331DE8A334009BC606 /* Config.swift in Sources */,
 				BE513B3B1DE8A4FC009BC606 /* SAPlayerViewController.swift in Sources */,
 				BE163C8C1DE7647B009034F3 /* AppDelegate.swift in Sources */,
