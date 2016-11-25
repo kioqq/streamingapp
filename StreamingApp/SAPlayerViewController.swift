@@ -24,8 +24,9 @@ class SAPlayerViewController: UIViewController {
         self.closeButton.layer.borderWidth = 1
         self.closeButton.layer.cornerRadius = 5
         self.closeButton.layer.borderColor = UIColor.white.cgColor
+        self.closeButton.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         
-        
+        view.addSubview(closeButton)
         
     }
 
@@ -50,6 +51,13 @@ class SAPlayerViewController: UIViewController {
         
     }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    
+        closeButton.frame = CGRect(x: 20, y: 20, width: 120, height: 40)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,6 +66,8 @@ class SAPlayerViewController: UIViewController {
     ///
     
     func stopAndCloseAction() {
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
 
